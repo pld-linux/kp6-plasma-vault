@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.1.5
+%define		kdeplasmaver	6.2.0
 %define		qtver		5.15.2
 %define		kpname		plasma-vault
 
 Summary:	KDE Plasma Vault
 Name:		kp6-%{kpname}
-Version:	6.1.5
+Version:	6.2.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	9d1ebfd9761780fd46c4c1df1c2e7163
+# Source0-md5:	aa29b4b80b6273d9eb628ed91cd21ba1
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -31,7 +31,8 @@ BuildRequires:	kf6-knotifyconfig-devel
 BuildRequires:	kf6-kpeople-devel
 BuildRequires:	kf6-krunner-devel
 BuildRequires:	kf6-kwallet-devel
-BuildRequires:	kp6-plasma-activities-stats-devel
+BuildRequires:	kp6-libplasma-devel >= %{version}
+BuildRequires:	kp6-plasma-activities-stats-devel >= %{version}
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xorg-driver-input-evdev-devel
