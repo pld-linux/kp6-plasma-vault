@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.2.3
+%define		kdeplasmaver	6.2.4
 %define		qtver		5.15.2
 %define		kpname		plasma-vault
 
 Summary:	KDE Plasma Vault
 Name:		kp6-%{kpname}
-Version:	6.2.3
+Version:	6.2.4
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	2d95e1a177c560870fd1526f887941ea
+# Source0-md5:	077041dc6084e5a95e2ec519515a65dd
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
