@@ -13,6 +13,7 @@ License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	cd34ed66deb75653f58bd25b1c448bca
+Patch0:		qdebug.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -51,6 +52,7 @@ format.
 
 %prep
 %setup -q -n %{kpname}-%{version}
+%patch -P 0 -p1
 
 %build
 %cmake -B build \
