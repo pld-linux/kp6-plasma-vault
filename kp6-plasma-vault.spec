@@ -1,19 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.3.4
+%define		kdeplasmaver	6.3.5
 %define		qtver		5.15.2
 %define		kpname		plasma-vault
 
 Summary:	KDE Plasma Vault
 Name:		kp6-%{kpname}
-Version:	6.3.4
+Version:	6.3.5
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	cd34ed66deb75653f58bd25b1c448bca
-Patch0:		qdebug.patch
+# Source0-md5:	d46012b7d1b6f54130327f0253621169
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -40,7 +39,7 @@ BuildRequires:	xorg-driver-input-evdev-devel
 BuildRequires:	xorg-driver-input-synaptics-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xz
-Obsoletes:	kp5-%{kpname} < %{version}
+Obsoletes:	kp5-%{kpname} < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt6dir		%{_libdir}/qt6
@@ -52,7 +51,6 @@ format.
 
 %prep
 %setup -q -n %{kpname}-%{version}
-%patch -P 0 -p1
 
 %build
 %cmake -B build \
