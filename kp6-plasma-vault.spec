@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.4.5
+%define		kdeplasmaver	6.5.0
 %define		qtver		5.15.2
 %define		kpname		plasma-vault
 
 Summary:	KDE Plasma Vault
 Name:		kp6-%{kpname}
-Version:	6.4.5
-Release:	3
+Version:	6.5.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	dac854563d9a6de8ddf3bf1db3befb19
+# Source0-md5:	65bc1901cff6a7c4081723ce6ac96cbd
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -76,9 +76,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/plasmavault.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kfileitemaction/plasmavaultfileitemaction.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.vault.so
+%{_libdir}/qt6/plugins/kf6/kded/plasmavault.so
+%{_libdir}/qt6/plugins/kf6/kfileitemaction/plasmavaultfileitemaction.so
+%{_libdir}/qt6/plugins/plasma/applets/org.kde.plasma.vault.so
 %{_datadir}/metainfo/org.kde.plasma.vault.appdata.xml
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.vault
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.vault/contents
