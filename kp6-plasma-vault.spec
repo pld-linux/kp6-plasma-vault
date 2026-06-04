@@ -50,6 +50,11 @@ Plasma Vault is an open-source encryption solution for KDE with which
 you can create encrypted folders to contain private files of any
 format.
 
+%description -l pl.UTF-8
+Plazma Vault jest otwartoźródłowym rozwiązaniem do szyfrowania dla
+KDE, z którym możliwe jest tworzenie zaszyfrowanych folderów
+zawierających prywatne pliki w dowolnym formacie.
+
 %prep
 %setup -q -n %{kpname}-%{version}
 
